@@ -1,11 +1,11 @@
 <?php
-session_start();
+    session_start();
     // error reporting
     error_reporting(E_ALL);
     ini_set("display_errors", 1);
 
     //setting url
-    $url = 'https://web-api-ps.herokuapp.com/api/v1/consultarpyme/cons_ByID';//Cambiar a la url correcta
+    $url = 'https://web-api-ps.herokuapp.com/api/v1/consultarpyme/cons_ByIDTodo';//Cambiar a la url correcta
     $id_empresa = $_SESSION['Id_Empresa'];
     //data
     $data = array("Id_Empresa" => $id_empresa);//Cambiar este dato a modo de que se reciba en base a lo necesario
@@ -16,7 +16,7 @@ session_start();
     
         if (FALSE === $ch)
             throw new Exception('failed to initialize');
-            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+            //curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);

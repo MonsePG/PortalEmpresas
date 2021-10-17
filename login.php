@@ -24,7 +24,7 @@
                                     <h3 class="text-center font-weight-light my-4">Inicio de sesión</h3>
                                 </div>
                                 <div class="card-body">
-                                    <form method="POST" action="login_validar.php">
+                                    <form method="POST" action="validarLoginEmpresa.php">
                                         <div class="form-floating mb-3">
                                             <input class="form-control" id="inputCorreo" name="Correo" type="text"
                                                 placeholder="Correo Electronico" / required>

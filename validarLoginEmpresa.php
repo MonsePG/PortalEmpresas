@@ -11,7 +11,7 @@ $campos = array(
   try {
     $campos_string = http_build_query($campos);
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://web-api-ps.herokuapp.com/api/v1/sesion/loginUsuario");
+    curl_setopt($ch, CURLOPT_URL, "https://web-api-ps.herokuapp.com/api/v1/sesion/loginEmpresa");
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_POSTFIELDS, $campos_string);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -20,16 +20,16 @@ $campos = array(
     $decodificada = json_decode($data);
     $ok = curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
-    
     //$ok = $resp->ok;
 
     if($ok == 200){
       $_SESSION['AutenticarUsuario'] = true;
-      $_SESSION['Correo'] = $decodificada->msg->Correo;     
-      $_SESSION['Id_Usuario'] = $decodificada->msg->Id_Usuario;  
+      $_SESSION['Correo'] = $decodificada->msg[0]->Correo;     
+      $_SESSION['Id_Usuario'] = $decodificada->msg[0]->Id_Usuario; 
+      $_SESSION['Id_Empresa'] = $decodificada->msg[0]->Id_Empresa;
 
       
-      header("location: info_gral.php");
+      header("location: infoEmpresa.php");
     }else {
         $_SESSION['error'] = $resp->msg;
         header("location: login.php?status=400");

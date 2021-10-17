@@ -5,17 +5,16 @@
     $Id_Usuario = $_POST['Id_Usuario'];
     $Id_Categoria = $_POST['Id_Categoria'];
     $Id_Direccion = $_POST['Id_Direccion'];
-    $Nombre = $_POST['Nombre'];
-    // $Imagen = addslashes(file_get_contents($_FILES["Imagen"]["tmp_name"]));
-    $Imagen =  new CURLFile($_FILES["Imagen"]["tmp_name"], $_FILES["Imagen"]["type"], $_FILES["Imagen"]["name"]);
-   // $tmpfile = $_FILES["imagen"]["tmp_name"];    
+    $Nombre = $_POST['Nombre'];   
     $Telefono = $_POST['Telefono'];
     $Correo = $_POST['Correo'];
+    //echo $Correo;
     $H_Open = $_POST['H_Open'];
     $H_Close = $_POST['H_Close'];
     $Fecha_Crea = date('Y-m-d');
     $Descripcion = $_POST['Descripcion'];
     $Activo = $_POST['Activo'];
+    $Imagen =  new CURLFile($_FILES['Imagen']["tmp_name"], $_FILES['Imagen']["type"], $_FILES['Imagen']["name"]);
 
     if( $_FILES['Imagen']['size'] > 1000000 ) {
         echo "No se pueden subir archivos con pesos mayores a 1MB";
