@@ -56,11 +56,7 @@ function makeSalidasInfo(data, target) {
     var salidas = $("<div>", {
         class: "mb-3 campo"
     }).data("campo", data);
-    $("<input>", {
-        type: "hidden",
-        value: data.Id_Empresa,
-        name: "Id_Empresa"
-    }).appendTo(salidas);
+
     $("<input>", {
         type: "hidden",
         value: data.Id_Usuario,
@@ -150,7 +146,7 @@ function makeSalidasInfo(data, target) {
     $("<label>", {
         class: "form-label",
         for: "Pagina"
-    }).html("Página de facebook ()").appendTo(salidas);
+    }).html("Página de facebook (link)").appendTo(salidas);
     $("<input>", {
         type: "text",
         class: "form-control",

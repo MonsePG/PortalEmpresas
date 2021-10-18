@@ -42,7 +42,7 @@
 
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, "https://web-api-ps.herokuapp.com/api/v1/consultarpyme/modificaEmpresa");
-    curl_setopt($ch, CURLOPT_PUT, 1);
+    curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-type: multipart/form-data'));
     curl_setopt($ch, CURLOPT_POSTFIELDS, $campos);
     $data = curl_exec($ch);
