@@ -48,7 +48,7 @@
 
     curl_close($ch);
     if($RespuestaServer == 200){
-      header("location: info_ofertas_promo.php");
+      header("location: infoEmpresa.php");
       }
     }
 ?>

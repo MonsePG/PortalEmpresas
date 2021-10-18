@@ -12,6 +12,42 @@ $(document).ready(function(event) {
     });
 });
 
+function makeCardEmpresa(data, target) {
+    var salidas = $("<div>", {
+        class: "mt-4 text-center Sep"
+    }).data(data);
+    $("<h5>", {}).html("Imagen").appendTo(salidas);
+    makeImageEmpresa(data, salidas);
+    if (target == undefined) {
+        return salidas;
+    } else {
+        salidas.appendTo(target);
+    }
+}
+
+function makeImageEmpresa(data, target) {
+    var salidas = $("<div>", {
+        class: "container text-center ImgEmpresa"
+    }).data(data);
+    $("<img>", {
+        src: data.Imagen,
+        class: "card-img-top",
+        width: "200px",
+        height: "200px"
+    }).appendTo(salidas);
+    $("<input>", {
+        type: "file",
+        accept: "image/*",
+        name: "Imagen"
+    }).appendTo(salidas);
+
+    if (target == undefined) {
+        return salidas;
+    } else {
+        salidas.appendTo(target);
+    }
+}
+
 function makeSalidasInfo(data, target) {
     var Nombre = data.Nombre;
     var Descripcion = data.Descripcion;
@@ -114,7 +150,7 @@ function makeSalidasInfo(data, target) {
     $("<label>", {
         class: "form-label",
         for: "Pagina"
-    }).html("Página de facebook (link)").appendTo(salidas);
+    }).html("Página de facebook ()").appendTo(salidas);
     $("<input>", {
         type: "text",
         class: "form-control",
@@ -123,46 +159,10 @@ function makeSalidasInfo(data, target) {
         name: "Facebook"
     }).appendTo(salidas);
     $("<br>").appendTo(salidas);
-    /*$("<button>", {
+    $("<button>", {
         type: "submit",
         class: "btn btn-success"
     }).html("Actualizar").appendTo(salidas);
-*/
-    if (target == undefined) {
-        return salidas;
-    } else {
-        salidas.appendTo(target);
-    }
-}
-
-function makeCardEmpresa(data, target) {
-    var salidas = $("<div>", {
-        class: "mt-4 text-center Sep"
-    }).data(data);
-    $("<h5>", {}).html("Imagen").appendTo(salidas);
-    makeImageEmpresa(data, salidas);
-    if (target == undefined) {
-        return salidas;
-    } else {
-        salidas.appendTo(target);
-    }
-}
-
-function makeImageEmpresa(data, target) {
-    var salidas = $("<div>", {
-        class: "container text-center ImgEmpresa"
-    }).data(data);
-    $("<img>", {
-        src: data.Imagen,
-        class: "card-img-top",
-        width: "200px",
-        height: "200px"
-    }).appendTo(salidas);
-    $("<input>", {
-        type: "file",
-        accept: "image/*",
-        name: "Imagen"
-    }).appendTo(salidas);
 
     if (target == undefined) {
         return salidas;

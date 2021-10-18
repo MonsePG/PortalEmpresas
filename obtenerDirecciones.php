@@ -1,7 +1,7 @@
 <?php
     $ch = curl_init();
     //Configuramos mediante CURLOPT_URL la URL de nuestra API en este caso de categorías
-    curl_setopt($ch, CURLOPT_URL, 'http://localhost:3000/api/v1/direccion/consultaDirecciones');
+    curl_setopt($ch, CURLOPT_URL, 'https://web-api-ps.herokuapp.com/api/v1/direccion/consultaDirecciones');
     //Abrimos conexión cURL y la almacenamos en la variable $ch.
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     // 0 o 1, indicamos que no queremos al Header en nuestra respuesta

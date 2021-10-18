@@ -12,7 +12,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Tablero de administración</title>
     <script src="lib/jquery/jquery-3.5.1.slim.min.js"></script>
-    <script src="lib/jquery/jquery-3.6.0.js"></script>
     <script src="lib/dist/js/bootstrap.min.js"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous">
@@ -67,16 +66,15 @@ session_start();
                     </div>
                     <div class="card-body">
                         <div class="container">
-                            <form action="editEmpresa.php" method="post">
+                            <form action="editEmpresa.php" method="post" enctype="multipart/form-data">
                                     <div class="ImgEmp">
 
                                     </div>
                                 
-                                
                                 <div class="Empresa">
 
                                 </div>
-                                <button type="submit" class="btn btn-success"> Actualizar </button>
+                                <!--<button type="submit" class="btn btn-success"> Actualizar </button>-->
                             </form>
                         </div>
                     </div>
