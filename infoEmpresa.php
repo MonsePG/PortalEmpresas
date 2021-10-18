@@ -74,7 +74,6 @@ session_start();
                                 <div class="Empresa">
 
                                 </div>
-                                <input type="hidden" name="Id_Empresa" value="21">
                                 <!--<button type="submit" class="btn btn-success"> Actualizar </button>-->
                             </form>
                         </div>
