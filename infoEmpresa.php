@@ -66,15 +66,19 @@ session_start();
                         </h1>
                     </div>
                     <div class="card-body">
-                        
-                            <div class="container">
-                                <form action="editEmpresa.php" method="post">
+                        <div class="container">
+                            <form action="editEmpresa.php" method="post">
+                                    <div class="ImgEmp">
+
+                                    </div>
+                                
+                                
                                 <div class="Empresa">
 
                                 </div>
                                 <button type="submit" class="btn btn-success"> Actualizar </button>
-                                </form>
-                            </div>
+                            </form>
+                        </div>
                     </div>
                     <!--<form action="getInfoEmpresa.php" method="GET" enctype="multipart/form-data">
                         <div class="mb-3" align="center">

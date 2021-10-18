@@ -130,6 +130,8 @@ if (!isset($_SESSION['AutenticarUsuario'])) {
                                 <input type="text" class="form-control" name="Descripcion" placeholder="Ingrese una breve descripción de la empresa" id="Descripcion" required>
                             </div>
                             <div class="mb-3">
+                                <label for="pageFb" class="form-label">Página de Facebook</label>
+                                <input type="text" class="form-control" name="Pagina_FB" placeholder="Ingrese el link a su página de FB" id="PageFb" required>
                                 <input type="hidden" name="Activo" value="1">
                             </div>
                             <div class="text-center"><button type="submit" class="btn btn-success">Guardar</button></div>

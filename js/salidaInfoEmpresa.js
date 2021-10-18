@@ -4,6 +4,11 @@ $(document).ready(function(event) {
         $.each(datos, function(i, v) {
             makeSalidasInfo(v, ".Empresa")
         });
+
+        $(".ImgEmp").empty();
+        $.each(datos, function(i, v) {
+            makeCardEmpresa(v, ".ImgEmp")
+        });
     });
 });
 
@@ -11,33 +16,44 @@ function makeSalidasInfo(data, target) {
     var Nombre = data.Nombre;
     var Descripcion = data.Descripcion;
     var Telefono = data.Telefono;
+    var Fb = data.Pagina_FB;
     var salidas = $("<div>", {
         class: "mb-3 campo"
     }).data("campo", data);
-    $("<input>",{
+    $("<input>", {
         type: "hidden",
         value: data.Id_Empresa,
         name: "Id_Empresa"
     }).appendTo(salidas);
-    $("<input>",{
+    $("<input>", {
         type: "hidden",
         value: data.Id_Usuario,
         name: "Id_Usuario"
     }).appendTo(salidas);
-    $("<input>",{
+    $("<input>", {
         type: "hidden",
         value: data.Id_Categoria,
         name: "Id_Categoria"
     }).appendTo(salidas);
-    $("<input>",{
+    $("<input>", {
         type: "hidden",
         value: data.Id_Direccion,
         name: "Id_Direccion"
     }).appendTo(salidas);
-    $("<input>",{
+    $("<input>", {
         type: "hidden",
         value: data.Correo,
         name: "Correo"
+    }).appendTo(salidas);
+    $("<input>", {
+        type: "hidden",
+        value: data.Fecha_Crea,
+        name: "Fecha"
+    }).appendTo(salidas);
+    $("<input>", {
+        type: "hidden",
+        value: data.Activo,
+        name: "Activo"
     }).appendTo(salidas);
     $("<label>", {
         class: "form-label",
@@ -95,11 +111,59 @@ function makeSalidasInfo(data, target) {
         value: Descripcion,
         name: "Descripcion"
     }).appendTo(salidas);
+    $("<label>", {
+        class: "form-label",
+        for: "Pagina"
+    }).html("Página de facebook (link)").appendTo(salidas);
+    $("<input>", {
+        type: "text",
+        class: "form-control",
+        id: "Pagina",
+        value: Fb,
+        name: "Facebook"
+    }).appendTo(salidas);
+    $("<br>").appendTo(salidas);
     /*$("<button>", {
         type: "submit",
         class: "btn btn-success"
     }).html("Actualizar").appendTo(salidas);
 */
+    if (target == undefined) {
+        return salidas;
+    } else {
+        salidas.appendTo(target);
+    }
+}
+
+function makeCardEmpresa(data, target) {
+    var salidas = $("<div>", {
+        class: "mt-4 text-center Sep"
+    }).data(data);
+    $("<h5>", {}).html("Imagen").appendTo(salidas);
+    makeImageEmpresa(data, salidas);
+    if (target == undefined) {
+        return salidas;
+    } else {
+        salidas.appendTo(target);
+    }
+}
+
+function makeImageEmpresa(data, target) {
+    var salidas = $("<div>", {
+        class: "container text-center ImgEmpresa"
+    }).data(data);
+    $("<img>", {
+        src: data.Imagen,
+        class: "card-img-top",
+        width: "200px",
+        height: "200px"
+    }).appendTo(salidas);
+    $("<input>", {
+        type: "file",
+        accept: "image/*",
+        name: "Imagen"
+    }).appendTo(salidas);
+
     if (target == undefined) {
         return salidas;
     } else {
